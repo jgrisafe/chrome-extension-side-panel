@@ -1,0 +1,26 @@
+{
+  "name": "chrome-extension-side-panel",
+  "version": "1.0.0",
+  "description": "chrome extension side panel starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neemi-ai/chrome-extension-side-panel.git"
+  },
+  "keywords": [
+    "sidepanel",
+    "side",
+    "panel",
+    "chrome",
+    "extension"
+  ],
+  "author": "Joey Grisafe <joey@neemi.ai>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neemi-ai/chrome-extension-side-panel/issues"
+  },
+  "homepage": "https://github.com/neemi-ai/chrome-extension-side-panel#readme"
+}
