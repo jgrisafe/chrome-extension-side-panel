@@ -4,7 +4,8 @@
   "description": "chrome extension side panel starter",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "start": "npm run clear && webpack -w --config config/webpack.config.js",
+    "clear": "rm -rf dist && rm -rf node_modules/.cache"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,45 @@
     "chrome",
     "extension"
   ],
-  "author": "Joey Grisafe <joey@neemi.ai>",
+  "author": "Joey Grisafe <info@neemi.ai>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/neemi-ai/chrome-extension-side-panel/issues"
   },
-  "homepage": "https://github.com/neemi-ai/chrome-extension-side-panel#readme"
+  "homepage": "https://github.com/neemi-ai/chrome-extension-side-panel#readme",
+  "devDependencies": {
+    "@chakra-ui/react": "^2.7.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/chrome": "^0.0.238",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@types/redux-logger": "^3.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "babel-preset-react-app": "^10.0.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "dotenv": "^16.3.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "generate-json-from-js-webpack-plugin": "^0.1.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.2",
+    "ts-loader": "^9.4.3",
+    "typescript": "^5.1.3",
+    "webext-redux": "^2.1.9",
+    "webpack-cli": "^5.1.4"
+  }
 }
