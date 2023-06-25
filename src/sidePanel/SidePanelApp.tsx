@@ -5,7 +5,7 @@ import LoadingSpinner from 'src/components/LoadingSpinner';
 import { useAppSelector } from "src/state/hooks/useAppDispatch";
 import PortNames from 'src/types/PortNames';
 
-const AppTray = () => {
+const SidePanelApp = () => {
   const port = useRef<chrome.runtime.Port>();
   const [isConnected, setIsConnected] = React.useState(false);
   const cursorpos = useAppSelector(state => state.content.cursorPosition)
@@ -50,4 +50,4 @@ const AppTray = () => {
   );
 };
 
-export default AppTray;
+export default SidePanelApp;

@@ -11,16 +11,17 @@ chrome.sidePanel
   .setPanelBehavior({ openPanelOnActionClick: true })
   .catch((error: any) => console.error(error));
 
-chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-  if (!(tab.id && changeInfo.status === 'complete')) return;
+chrome.tabs.onUpdated
+    .addListener(async (tabId, changeInfo, tab) => {
+      if (!(tab.id && changeInfo.status === 'complete')) return;
 
-  console.log('tab connected: ', tab.url, changeInfo);
+      console.log('tab connected: ', tab.url, changeInfo);
 
-  if (await storage.getItem('panelOpen')) {
-    console.log('panel open');
-    injectContentScript(tabId);
-  }
-});
+      if (await storage.getItem('panelOpen')) {
+        console.log('panel open');
+        injectContentScript(tabId);
+      }
+    });
 
 chrome.runtime.onConnect.addListener(port => {
   port.onMessage.addListener(async msg => {
@@ -46,7 +47,10 @@ chrome.runtime.onConnect.addListener(port => {
 
         injectContentScript(tab.id);
 
-        port.postMessage({ type: 'handle-init', message: 'panel open' });
+        port.postMessage({
+          type: 'handle-init',
+          message: 'panel open'
+        });
       }
     }
   });

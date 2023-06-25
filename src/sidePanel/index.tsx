@@ -6,7 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { createStoreProxy } from 'src/state/store';
 import PortNames from 'src/types/PortNames';
 
-import AppTray from './AppTray';
+import SidePanelApp from './SidePanelApp';
  
 const store = createStoreProxy(PortNames.ContentPort);
 const container = document.getElementById('root');
@@ -21,7 +21,7 @@ store.ready().then(() => {
     root.render(
         <Provider store={store}>
             <ChakraProvider>
-                <AppTray />
+                <SidePanelApp />
             </ChakraProvider>
         </Provider>
     );
